@@ -1,0 +1,79 @@
+[
+  {
+    "transactionId": "TX1003",
+    "amount": 45,
+    "date": "2025-03-18"
+  },
+  {
+    "customerId": 103,
+    "transactionId": "TX1004",
+    "amount": 210,
+    "date": "2025-01-08"
+  },
+  {
+    "customerId": 104,
+    "transactionId": "TX1005",
+    "amount": 150,
+    "date": "2025-02-10"
+  },
+  {
+    "customerId": 105,
+    "transactionId": "TX1006",
+    "amount": 99,
+    "date": "2025-03-11"
+  },
+  {
+    "customerId": 106,
+    "transactionId": "TX1007",
+    "amount": 65,
+    "date": "2025-01-21"
+  },
+  {
+    "customerId": 107,
+    "transactionId": "TX1008",
+    "amount": 135,
+    "date": "2025-02-02"
+  },
+  {
+    "customerId": 108,
+    "transactionId": "TX1009",
+    "amount": 85,
+    "date": "2025-03-22"
+  },
+  {
+    "customerId": 109,
+    "transactionId": "TX1010",
+    "amount": 180,
+    "date": "2025-01-14"
+  },
+  {
+    "customerId": 110,
+    "transactionId": "TX1011",
+    "amount": 110,
+    "date": "2025-02-20"
+  },
+  {
+    "customerId": 111,
+    "transactionId": "TX1012",
+    "amount": 59,
+    "date": "2025-03-03"
+  },
+  {
+    "customerId": 112,
+    "transactionId": "TX1013",
+    "amount": 240,
+    "date": "2025-01-30"
+  },
+  {
+    "customerId": 113,
+    "transactionId": "TX1014",
+    "amount": 145,
+    "date": "2025-02-25"
+  },
+  {
+    "customerId": 114,
+    "transactionId": "TX1015",
+    "amount": 130.5,
+    "date": "2025-03-19"
+  }
+]

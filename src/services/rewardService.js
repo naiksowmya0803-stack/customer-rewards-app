@@ -1,0 +1,11 @@
+export const calculateRewardPoints = (amount) => {
+  if (amount <= 50) {
+    return 0;
+  }
+
+  if (amount > 50 && amount <= 100) {
+    return Math.floor(amount - 50);
+  }
+
+  return Math.floor((amount - 100) * 2 + 50);
+};
