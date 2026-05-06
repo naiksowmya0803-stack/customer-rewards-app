@@ -1,70 +1,248 @@
-# Getting Started with Create React App
+# Customer Rewards App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React JS application that calculates customer reward points based on transactions over a three-month period.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# Features
 
-### `npm start`
+- Display all customers dynamically
+- Reward points calculation based on transaction amount
+- Monthly and total reward summary
+- Month and year filtering
+- Transaction level reward details
+- Mock API simulation using local JSON
+- Loading and error handling
+- Pagination ready structure
+- Logging using Pino
+- Unit test cases using Jest
+- Functional components with React Hooks
+- PropTypes validation
+- Simple responsive UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Reward Calculation Logic
 
-### `npm test`
+The retailer rewards customers based on the following rules:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 2 points for every dollar spent above $100
+- 1 point for every dollar spent between $50 and $100
 
-### `npm run build`
+## Example
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Transaction Amount = $120
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Amount above $100 = $20 → 20 × 2 = 40 points
+- Amount between $50 and $100 = $50 → 50 × 1 = 50 points
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Total Reward Points = 90
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React JS
+- JavaScript
+- Styled Components / CSS
+- Pino Logger
+- Jest & React Testing Library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Project Structure
 
-## Learn More
+```text
+customer-rewards-app/
+│
+├── public/
+│   └── data/
+│       └── transactions.json
+│
+├── src/
+│   ├── api/
+│   ├── components/
+│   ├── constants/
+│   ├── services/
+│   ├── tests/
+│   ├── utils/
+│   ├── logger.js
+│   ├── App.js
+│   └── App.css
+│
+├── package.json
+└── README.md
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Installation Steps
 
-### Code Splitting
+## 1. Clone Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/customer-rewards-app.git
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 2. Navigate To Project Folder
 
-### Making a Progressive Web App
+```bash
+cd customer-rewards-app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 3. Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm install
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Run Application
 
-### `npm run build` fails to minify
+Start the React application using:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+npm start
+```
+
+Application runs on:
+
+```text
+http://localhost:3000
+```
+
+---
+
+# Run Test Cases
+
+Execute unit test cases using:
+
+```bash
+npm test
+```
+
+---
+
+# Test Cases Covered
+
+The application includes positive and negative unit test cases for reward calculation logic.
+
+## Positive Test Cases
+
+- Reward calculation above $100
+- Reward calculation between $50 and $100
+- Exact boundary value testing
+
+## Negative Test Cases
+
+- Negative transaction amount
+- Zero transaction amount
+- Amount below reward threshold
+
+## Fractional Value Test Case
+
+- Decimal transaction amount handling
+
+---
+
+# Logging
+
+Pino logger is used for application logging.
+
+## Logger File
+
+```text
+src/logger.js
+```
+
+## Example Logs
+
+- API fetch started
+- API fetch success
+- API fetch failure
+- Error logging
+
+---
+
+# API Simulation
+
+The application uses local mock JSON data and simulates asynchronous API calls using `setTimeout()`.
+
+## Mock Data Location
+
+```text
+public/data/transactions.json
+```
+
+---
+
+# Filters Available
+
+## Month Filter
+
+- JAN to DEC
+- Default displays recent 3 months data
+
+## Year Filter
+
+- 2025
+- 2024
+- 2023
+- 2022
+- 2021
+
+---
+
+# No Transactions Handling
+
+If no data exists for selected month/year filters, application displays:
+
+```text
+No transactions
+```
+
+---
+
+# Coding Standards Followed
+
+- Functional Components
+- React Hooks
+- Component Reusability
+- PropTypes Validation
+- Code Splitting
+- Clean Folder Structure
+- Dynamic Data Handling
+- Minimal Re-renders using React.memo and useMemo
+
+---
+
+# Screenshots To Add
+
+Add below screenshots before submission:
+
+- Application Home Screen
+- Customer Selection
+- Month/Year Filter
+- Reward Summary
+- Transaction Table
+- No Transactions Screen
+- Successful Test Cases
+- GitHub Repository
+
+---
+
+# Future Improvements
+
+- Add charts for reward analytics
+- Add sorting functionality
+- Add search functionality
+- Add pagination enhancement
+- Add responsive mobile design
+
+---
+
